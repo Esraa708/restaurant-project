@@ -31,7 +31,7 @@ fetchNeighborhoods = () => {
  */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js').then(function(reg) {
+    navigator.serviceWorker.register('./sw.js').then(function(reg) {
       console.log('ServiceWorker registration successful');
     }, function(error) {
       console.log('ServiceWorker registration failed',error);
