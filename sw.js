@@ -31,7 +31,7 @@ caches.open(myCacheName).then(function(cache){
         caches.keys().then(function(cacheNames) {
             return Promise.all(
                 cacheNames.filter(function(cacheName) {
-                    return cacheName.startsWith('cache1') &&
+                    return cacheName.startsWith('cache-') &&
                         cacheName != myCacheName;
                 }).map(function(cacheName) {
                     return caches.delete(cacheName);
