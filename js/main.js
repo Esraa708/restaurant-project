@@ -26,6 +26,18 @@ fetchNeighborhoods = () => {
     }
   });
 }
+/**
+ * service worker registration
+ */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(reg) {
+      console.log('ServiceWorker registration successful');
+    }, function(error) {
+      console.log('ServiceWorker registration failed',error);
+    });
+  });
+}
 
 /**
  * Set neighborhoods HTML.
@@ -160,6 +172,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.setAttribute('alt','The image of the restaurant');
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
