@@ -27,6 +27,7 @@ self.addEventListener('install', function (event) {
     })
   )
 });
+
 self.addEventListener('activate', function (event) {
   event.waitUntil(
     caches.keys().then(function (cacheNames) {
@@ -42,6 +43,14 @@ self.addEventListener('activate', function (event) {
   );
 });
 self.addEventListener('fetch', function (event) {
+  var requestUrl = new URL(event.request.url);
+  if (requestUrl.origin === location.origin) {
+    if (requestUrl.pathname === '/restaurant.html') {
+      event.respondWith(caches.match('/restaurant.html'));
+      return;
+    }
+  }
+
   event.respondWith(
     caches.match(event.request)
     .then(function (response) {

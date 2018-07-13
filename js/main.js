@@ -31,7 +31,7 @@ fetchNeighborhoods = () => {
  */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('./sw.js').then(function(reg) {
+    navigator.serviceWorker.register('/sw.js').then(function(reg) {
       console.log('ServiceWorker registration successful');
     }, function(error) {
       console.log('ServiceWorker registration failed',error);
@@ -176,7 +176,7 @@ createRestaurantHTML = (restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.innerHTML = restaurant.name;
   li.append(name);
 

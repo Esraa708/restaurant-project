@@ -105,10 +105,11 @@ nav h1 a {
 #breadcrumb {
   padding: 10px 40px 16px;
   list-style: none;
-  background-color: #ffffff;
+  background-color: #d3d0ce;
   font-size: 17px;
   margin: 0;
   width: calc(50% - 80px);
+  
 }
 
 /* Display list items side by side */
@@ -155,9 +156,12 @@ nav h1 a {
 
 .filter-options {
   width: 100%;
-  height: 50px;
+  height: 100px;
   background-color: #3397DB;
   align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .filter-options h2 {
@@ -166,6 +170,7 @@ nav h1 a {
   font-weight: normal;
   line-height: 1;
   margin: 0 20px;
+  width: 100%;
 }
 
 .filter-options select {
@@ -370,9 +375,12 @@ nav h1 a {
     
     font-size: 15px;
   }
+  /* .filter-options select{
+    margin: 0px;
+  } */
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
   #breadcrumb {
     order: 1;
     padding: 0;
